@@ -7,12 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * This class initializes the command line application that is based on Spring Boot for data import.
  */
-@SpringBootApplication(
-    scanBasePackages = {
-      "com.location.finder.mongo",
-      "com.location.importer",
-      "com.location.finder.application"
-    })
+@SpringBootApplication(scanBasePackages = {"com.location.finder.mongo", "com.location.importer"})
 public class MongoDBDataImporterApplication implements CommandLineRunner {
 
   /** The data import service for reading food truck csv and inserting into MongoDB. */
