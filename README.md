@@ -6,7 +6,7 @@ whole backend system split into few modules, and few additional components for d
 
 You can also jump into the Demo before checking the details, which helps you find the nearest food trucks in San Francisco. 🚚 🌮
 
-Demo: https://desolate-taiga-61470.herokuapp.com/ (First access may take few seconds, as application pauses after a period of inactivity on Heroku)
+Demo: https://desolate-taiga-61470.herokuapp.com/ (First access may take 10-20 seconds, as application pauses after a period of inactivity on Heroku)
 
 ## Location Finder Overview
 
