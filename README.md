@@ -144,7 +144,8 @@ After docker containers start, you can access to the MongoDB management UI via h
 Create a new database `location-database`. The collection `food-trucks` will be automatically created by the importer. Run the importer by setting connection settings
 
 ```bash
-export SPRING_DATA_MONGODB_URI=mongodb://root:example@localhost:27017/  # Use export SPRING_DATA_MONGODB_URI=mongodb+srv://<your_user>:<your_password>@<your_atlas_host>/ in case of Atlas
+export SPRING_DATA_MONGODB_URI=mongodb://root:example@localhost:27017/  
+# Use export SPRING_DATA_MONGODB_URI=mongodb+srv://<your_user>:<your_password>@<your_atlas_host>/ in case of Atlas
 export SPRING_DATA_MONGODB_DATABASE=location-database
 
 cd location-importer-mongo
