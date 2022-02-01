@@ -1,0 +1,1 @@
+web: java -Xms150M -Xmx500M  -jar location-finder-application/target/location-finder-application-0.0.1-SNAPSHOT.jar --server.port=$PORT

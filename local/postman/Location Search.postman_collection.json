@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "aeefd0c9-86d3-4015-b0b7-2204701b5530",
+		"name": "Location Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search Food Truck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/location?longitude=-122.414408&latitude=37.784683&type=FoodTruck&numberOfLocations=5&radius=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"location"
+					],
+					"query": [
+						{
+							"key": "longitude",
+							"value": "-122.414408",
+							"description": "Center location longtiude to search for food trucks"
+						},
+						{
+							"key": "latitude",
+							"value": "37.784683",
+							"description": "Center location latitude to search for food trucks"
+						},
+						{
+							"key": "type",
+							"value": "FoodTruck",
+							"description": "Search type, FoodTruck for searching for food trucks"
+						},
+						{
+							"key": "numberOfLocations",
+							"value": "5",
+							"description": "Number of locations to return"
+						},
+						{
+							"key": "radius",
+							"value": "5",
+							"description": "Search radius in miles."
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,105 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Location Finder
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:8080
+  - url: https://desolate-taiga-61470.herokuapp.com
+paths:
+  /location:
+    get:
+      summary: Search for a location
+      operationId: searchLocations
+      tags:
+        - locations
+      parameters:
+        - name: numberOfLocations
+          in: query
+          description: How many items to return at one time (max 20)
+          required: false
+          example : 5
+          schema:
+            type: integer
+            format: int32
+        - name: radius
+          in: query
+          description: The saerch radius in miles
+          required: false
+          example : 5
+          schema:
+            type: integer
+            format: int32
+        - name: latitude
+          in: query
+          description: Latitude of the center location.
+          required: true
+          example : 37.784683
+          schema:
+            type: number
+            format: double
+        - name: longitude
+          in: query
+          description: Longitude of the center location.
+          required: true
+          example : -122.414408
+          schema:
+            type: number
+            format: double
+        - name: type
+          in: query
+          description: Search type
+          example: FoodTruck
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: List of locations based on the given center.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Locations"
+        400:
+          description: Invalid Query Parameters
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationErrors"
+components:
+  schemas:
+    Location:
+      required:
+        - id
+        - name
+      properties:
+        latitude:
+          type: number
+          format: double
+          example: 37.78442073689951
+        longitude:
+          type: number
+          format: double
+          example: -122.41840535178247
+        name:
+          type: string
+    Locations:
+      type: array
+      items:
+        $ref: "#/components/schemas/Location"
+    ValidationErrors:
+      type: array
+      items:
+        $ref: "#/components/schemas/ValidationError"
+    ValidationError:
+      required:
+        - code
+        - message
+      properties:
+        fieldName:
+          type: string
+          example: numberOfLocations
+        message:
+          type: string
+          example: must be less than or equal to 20
