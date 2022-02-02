@@ -170,7 +170,7 @@ INFO 11686 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Nett
 INFO 11686 --- [           main] c.l.f.a.LocationFinderApplication        : Started LocationFinderApplication in 6.585 seconds (JVM running for 6.901)
 ```
 
-You can access the application via, (make sure that you have configured bing API KEY)
+You can access the application via http://localhost:8080, (make sure that you have configured bing API KEY)
 
 ![App UI](local/doc/finder-ui.png)
 
