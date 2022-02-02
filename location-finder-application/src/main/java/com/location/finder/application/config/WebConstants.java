@@ -6,7 +6,7 @@ public class WebConstants {
   /** Private contractor to prevent inheritance. */
   private WebConstants() {}
 
-  /** The origin hostname where UI is hosted. */
+  /** The max age of cors headers. */
   protected static final int CORS_HEADER_MAX_AGE = 3600;
 
   /** Methods exposes by the application for cors filter. */
